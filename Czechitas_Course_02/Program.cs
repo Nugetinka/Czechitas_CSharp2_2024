@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ahoj");
+            Console.WriteLine("Czechitas Csharp 2");
         }
     }
 }
