@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ahoj, vítej na kurzu Czechitas 2 :D");
+            Console.WriteLine("Ahoj, vítej na kurzu Czechitas CSharp 2 :D");
         }
     }
 }
