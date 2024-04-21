@@ -1,4 +1,4 @@
-﻿namespace Lekce_03_BR
+﻿namespace Lekce_02_BR01
 {
     internal class Program
     {
