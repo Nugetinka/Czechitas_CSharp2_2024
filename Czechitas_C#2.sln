@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lekce02", "Lekce02", "{5B01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lekce_02_BR01", "Lekce_02_BR01\Lekce_02_BR01.csproj", "{6AD87CB2-AAE7-4657-9F47-F6E2C91A55DF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lekce02_ukol", "Lekce02_ukol", "{6035D116-E565-4C2D-949A-C9BD5D3AEAA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
