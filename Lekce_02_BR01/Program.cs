@@ -24,6 +24,7 @@
             Console.WriteLine($"Dny: {casDoDovolene.Days}, Minuty: {casDoDovolene.Minutes}");
 
             Console.WriteLine(ted.ToString("yyyy-MM-dd hh:mm:ss"));
+            Console.WriteLine("Hello, World!");
         }
     }
 }
