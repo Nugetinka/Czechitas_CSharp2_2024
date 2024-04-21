@@ -18,7 +18,7 @@
             {
                 podel.PodelCisla(cislo1, cislo2);
             }
-            catch (Exception vyjimka) 
+            catch (Exception vyjimka)
             {
                 Console.WriteLine(vyjimka);
                 Console.ReadLine();
