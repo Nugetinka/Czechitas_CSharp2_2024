@@ -16,9 +16,8 @@
                 }
             }
             catch
-            { 
+            {
                 Console.WriteLine("Zadal jsi neplatný vstup.");
-                Console.ReadLine();
             }
         }
     }

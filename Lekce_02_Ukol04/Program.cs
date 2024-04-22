@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Lucisnik alexander = new Lucisnik(10);
+            Lucistnik alexander = new Lucistnik(10);
 
             while (alexander.PocetSipu > 0)
             {
@@ -12,7 +12,7 @@
             }
         }
 
-        public class Lucisnik
+        public class Lucistnik
         {
             public int PocetSipu;
 
@@ -30,7 +30,7 @@
                 }
             }
 
-            public Lucisnik(int pocetSipu)
+            public Lucistnik(int pocetSipu)
             {
                 PocetSipu = pocetSipu;
             }
