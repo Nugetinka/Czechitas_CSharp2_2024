@@ -101,7 +101,6 @@ it was the grayish white of old porridge.";
             // Zjisti, kolikrat se v textu vyskytuje slovo "and" bez ohledu na velikosti prvniho pismenka a vysledek uloz do promenne 'pocetAnd'.
             // Abych vam to zjednodusil, muzete se spolehnout, ze tato anglicka spojka bude v textu vzdy obklopena mezerou na kazde strane.
             // Tim se snadno vylouci jakekoliv vyskyty "and" v ramci jinych slov.
-
             string slovoKNalezeni = " and ";
             int pocetAnd = pocetVyskytuSlova(text, slovoKNalezeni);
 
@@ -116,7 +115,6 @@ it was the grayish white of old porridge.";
                     index = text.IndexOf(slovo, index + 1, StringComparison.OrdinalIgnoreCase);
                 }
                 return pocetSlov;
-
             }
             Console.WriteLine("Text obsahuje slovo 'and' celkem 5x' - ".PadRight(padding) + (pocetAnd == 5));
         }
