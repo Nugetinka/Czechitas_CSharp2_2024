@@ -56,24 +56,41 @@ it was the grayish white of old porridge.";
             Console.WriteLine("V textu se zminuje Harryho 'teticka' - ".PadRight(padding) + (piseSeOMarge == true));
 
             // Zjisti, jestli je text spravne ukonceny interpunkci. Vysledek uloz do promenne 'jeSpravneUkoncen'.
-            bool jeSpravneUkoncen = text.EndsWith(".");
+            char posledniZnak = text[text.Length - 1];
+            bool jeSpravneUkoncen = Char.IsPunctuation(posledniZnak);
             Console.WriteLine("Text je spravne ukoncen interpunkci - ".PadRight(padding) + (jeSpravneUkoncen == true));
 
             // Pomoci abecedniho porovnavani zjisti, ktery z nasledujicich textu je podle abecedy prvni a jeho hodnotu prirad do promenne 'prvni'.
-            string blabol1 = "abbc";
+            string blabol1 = "abbc"; 
             string blabol2 = "acbc";
             string blabol3 = "abbb";
+            string prvni;
 
-            string prvni = blabol1;
+            int vysledekPorovnani1 = string.Compare(blabol1, blabol2);
+            int vysledekPorovnani2 = string.Compare(blabol1, blabol3);
+            int vysledekPorovnani3 = string.Compare(blabol2, blabol3);
 
-            if (string.Compare(blabol2, prvni) == -1)
+            if (vysledekPorovnani1 < 0)
             {
-                prvni = blabol2;
+                if (vysledekPorovnani2 < 0)
+                {
+                    prvni = blabol1;
+                }
+                else
+                {
+                    prvni = blabol3;
+                }
             }
-
-            if (string.Compare(blabol3, prvni) == -1)
+            else
             {
-                prvni = blabol3;
+                if (vysledekPorovnani3 < 0)
+                {
+                    prvni = blabol2;
+                }
+                else
+                {
+                    prvni = blabol3;
+                }       
             }
 
             Console.WriteLine("Prvni v abecede je blabol3 - ".PadRight(padding) + (prvni == blabol3));
