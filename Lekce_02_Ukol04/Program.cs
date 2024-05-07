@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Lucistnik alexander = new Lucistnik(2);
+            Lucistnik alexander = new Lucistnik(10);
 
             while (alexander.NastavPocetSipu() > 0)
             {
