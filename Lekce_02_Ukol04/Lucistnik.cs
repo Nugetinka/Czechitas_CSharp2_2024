@@ -18,12 +18,12 @@
 
         public void Vystrel()
         {
-                _pocetSipu--;
+            _pocetSipu--;
         }
 
         public int VratPocetSipu()
-        { 
-            return _pocetSipu; 
+        {
+            return _pocetSipu;
         }
     }
 }
