@@ -69,8 +69,8 @@
             {
                 { "chleba", 20 },
                 { "houska", 5 },
-                { "koláček", 15},
-                { "rohlík", 3},
+                { "koláček", 15 },
+                { "rohlík", 3 },
             };
 
             VypisSlovnik(polozkyNakupu);
@@ -108,11 +108,11 @@
             // aby obsahovala hromadnou cenu za všechny stejné položky.
             VypisSlovnik(polozkyNakupu);
             Console.WriteLine("-----------------------");
-            AktualizaceHromadneCeny("rohlík", polozkyNakupu);
+            AktualizujHromadneCeny("rohlík", polozkyNakupu);
             VypisSlovnik(polozkyNakupu);
             Console.WriteLine("-----------------------");
 
-            static void AktualizaceHromadneCeny(string pecivo, Dictionary<string, int> polozkyNakupu)
+            static void AktualizujHromadneCeny(string pecivo, Dictionary<string, int> polozkyNakupu)
             {
                 if (polozkyNakupu.ContainsKey(pecivo))
                 {
