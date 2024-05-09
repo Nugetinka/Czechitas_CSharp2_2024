@@ -7,10 +7,10 @@
             Kalkulacka kalkulacka = new Kalkulacka();
 
             Console.Write("Zadej první číslo: ");
-            double cislo1 = kalkulacka.NactiDesetinneCisloZKonzole(Console.ReadLine());
+            double cislo1 = kalkulacka.NactiDesetinneCisloZKonzole();
 
             Console.Write("Zadej druhé číslo: ");
-            double cislo2 = kalkulacka.NactiDesetinneCisloZKonzole(Console.ReadLine());
+            double cislo2 = kalkulacka.NactiDesetinneCisloZKonzole();
 
             double vysledek = kalkulacka.Secti(cislo1, cislo2);
 

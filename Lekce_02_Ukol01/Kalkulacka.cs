@@ -2,19 +2,19 @@
 {
     class Kalkulacka
     {
-        public double vysledek;
-        public double desetinneCislo;
+        private double desetinneCislo;
 
         public double Secti(double a, double b)
         {
-            vysledek = a + b;
+            double vysledek = a + b;
             return vysledek;
         }
 
-        public double NactiDesetinneCisloZKonzole(string textOdUzivatele)
+        public double NactiDesetinneCisloZKonzole()
         {
             while (true)
             {
+                string textOdUzivatele = Console.ReadLine();
                 bool jeCisloPlatne = double.TryParse(textOdUzivatele, out desetinneCislo);
 
                 if (jeCisloPlatne)
@@ -24,7 +24,6 @@
                 else
                 {
                     Console.Write("Zadal jsi neplatné číslo, zkus to znovu: ");
-                    textOdUzivatele = Console.ReadLine();
                 }
             }
             return desetinneCislo;
