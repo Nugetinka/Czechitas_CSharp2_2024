@@ -2,8 +2,6 @@
 {
     class Kalkulacka
     {
-        private double desetinneCislo;
-
         public double Secti(double a, double b)
         {
             double vysledek = a + b;
@@ -12,6 +10,8 @@
 
         public double NactiDesetinneCisloZKonzole()
         {
+            double desetinneCislo;
+
             while (true)
             {
                 string textOdUzivatele = Console.ReadLine();

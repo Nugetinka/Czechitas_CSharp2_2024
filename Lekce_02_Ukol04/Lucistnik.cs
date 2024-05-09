@@ -2,13 +2,13 @@
 {
     internal class Lucistnik
     {
-        private int PocetSipu;
+        private int _pocetSipu;
 
         public Lucistnik(int pocetSipu)
         {
             if (pocetSipu >= 0)
             {
-                PocetSipu = pocetSipu;
+                _pocetSipu = pocetSipu;
             }
             else
             {
@@ -18,20 +18,12 @@
 
         public void Vystrel()
         {
-            PocetSipu--;
-            if (PocetSipu > 0)
-            {
-                Console.WriteLine("Vždy se trefím přímo doprostřed!");
-            }
-            else 
-            {
-                Console.WriteLine("Nemám šípy.");
-            }
+                _pocetSipu--;
         }
 
-        public int NastavPocetSipu()
+        public int VratPocetSipu()
         { 
-            return PocetSipu; 
+            return _pocetSipu; 
         }
     }
 }

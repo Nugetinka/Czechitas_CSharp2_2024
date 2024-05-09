@@ -4,12 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Lucistnik alexander = new Lucistnik(10);
+            Lucistnik alexander = new Lucistnik(5);
 
-            while (alexander.NastavPocetSipu() > 0)
+            while (alexander.VratPocetSipu() > 0)
             {
                 alexander.Vystrel();
+                Console.WriteLine("Vždy se trefím přímo doprostřed!");
             }
+            Console.WriteLine("Nemám šípy.");
         }
     }
 }

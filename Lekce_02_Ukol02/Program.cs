@@ -6,26 +6,26 @@
         {
             Console.WriteLine("Zadej počet hvězdiček: ");
             string vstup = Console.ReadLine();
+            bool jeVstupPlatny = int.TryParse(vstup, out int pocetHvezdicek);
+
+            for (int i = 0; i < pocetHvezdicek; i++)
+            {
+                Console.Write("*");
+            }
 
             try
             {
-                int pocetHvezdicek = int.Parse(vstup);
-
                 if (pocetHvezdicek < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Počet hvězdiček nesmí být záporný");
+                    throw new ArgumentOutOfRangeException("Počet hvězdiček nesmí být záporný.");
                 }
 
-                for (int i = 0; i < pocetHvezdicek; i++)
+                if (!jeVstupPlatny)
                 {
-                    Console.Write("*");
+                    throw new FormatException("Musí být zadáno celé číslo.");
                 }
             }
-            catch (FormatException exception)
-            {
-                Console.WriteLine($"Došlo k výjimce: {exception.Message}");
-            }
-            catch (ArgumentOutOfRangeException exception)
+            catch (Exception exception) when (exception is FormatException or ArgumentOutOfRangeException)
             {
                 Console.WriteLine($"Došlo k výjimce: {exception.Message}");
             }
