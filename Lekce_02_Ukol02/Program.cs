@@ -8,11 +8,6 @@
             string vstup = Console.ReadLine();
             bool jeVstupPlatny = int.TryParse(vstup, out int pocetHvezdicek);
 
-            for (int i = 0; i < pocetHvezdicek; i++)
-            {
-                Console.Write("*");
-            }
-
             try
             {
                 if (pocetHvezdicek < 0)
@@ -23,6 +18,11 @@
                 if (!jeVstupPlatny)
                 {
                     throw new FormatException("Musí být zadáno celé číslo.");
+                }
+
+                for (int i = 0; i < pocetHvezdicek; i++)
+                {
+                    Console.Write("*");
                 }
             }
             catch (Exception exception) when (exception is FormatException or ArgumentOutOfRangeException)

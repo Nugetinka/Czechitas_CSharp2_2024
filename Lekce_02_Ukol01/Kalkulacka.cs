@@ -4,8 +4,7 @@
     {
         public double Secti(double a, double b)
         {
-            double vysledek = a + b;
-            return vysledek;
+            return a + b;
         }
 
         public double NactiDesetinneCisloZKonzole()

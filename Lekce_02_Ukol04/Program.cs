@@ -8,7 +8,7 @@
 
             while (alexander.VratPocetSipu() > 0)
             {
-                alexander.Vystrel();
+                alexander.ZkusVystrelit();
                 Console.WriteLine("Vždy se trefím přímo doprostřed!");
             }
             Console.WriteLine("Nemám šípy.");

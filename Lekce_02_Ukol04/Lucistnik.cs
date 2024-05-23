@@ -16,9 +16,15 @@
             }
         }
 
-        public void Vystrel()
+        public bool ZkusVystrelit()
         {
+            if (_pocetSipu <= 0)
+            {
+                return false;
+            }
+
             _pocetSipu--;
+            return true;
         }
 
         public int VratPocetSipu()
