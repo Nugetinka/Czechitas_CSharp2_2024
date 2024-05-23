@@ -35,7 +35,6 @@
             // 1. Nalezněte slova začínající písmenem 'M'
             List<string> ovoce = new List<string>() { "Merunka", "Jablko", "Pomeranc", "Meloun", "Malina", "Limetka" };
 
-
             // 1. Řešení
             List<string> mOvoce = ovoce.Where(o => o.StartsWith("M")).ToList();
 
@@ -44,12 +43,11 @@
                 Console.WriteLine(o);
             }
 
-
             // ==========================================		
             // 2. Která z následujících čísel jsou násobky 4 nebo 6
             List<int> ruznaCisla = new List<int>()
         {
-            15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+            15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96, 15
         };
 
             // 2. Řešení
@@ -61,7 +59,6 @@
             }
 
             // 3. Kolik je v seznamu ruznaCisla čísel?
-            // Console.WriteLine(?????);
             int pocetCisel = ruznaCisla.Count();
             Console.WriteLine(pocetCisel);
 
@@ -81,7 +78,7 @@
         };
 
             // 4. Řešení
-            List<string> vzestupne = new List<string>();
+            List<string> vzestupne = jmena.Order().ToList();
 
             foreach (string text in vzestupne)
             {
@@ -131,9 +128,15 @@
         };
 
             // 7. Řešení
-            // najít milionáře a pak dát grouping podle kodu banky
 
-            List<SkupinaMilionaru> skupinyPodleBanky = null;
+            List<SkupinaMilionaru> skupinyPodleBanky = zakaznici
+                .Where(z => z.Zustatek >= 1_000_000)
+                .GroupBy(z => z.Banka, (kodBanky, milionari) => new SkupinaMilionaru
+                {
+                    Banka = kodBanky,
+                    Milionari = milionari.Select(m => m.Jmeno)
+                })
+                .ToList();
 
             foreach (var polozka in skupinyPodleBanky)
             {
@@ -145,7 +148,7 @@
             // Napr
             // Jan Novak v Ceska Sporitelna
             // Josef Novotny v Komercni Banka
-            // jeden z možností je join
+
             List<Banka> banky = new List<Banka>() {
                 new Banka(){ Jmeno="Ceska Sporitelna", Symbol="CS"},
                 new Banka(){ Jmeno="Komercni Banka", Symbol="KB"},
@@ -153,15 +156,22 @@
                 new Banka(){ Jmeno="Citibank", Symbol="CITI"},
             };
 
-            //// 8. Řešení
-            List<Zakaznik> reportMilionaru = null;
+            // 8. Řešení
 
-            foreach (Zakaznik zakaznik in reportMilionaru)
+            var reportMilionaru = from b in banky
+                                  join z in zakaznici
+                                  on b.Symbol equals z.Banka
+                                  where z.Zustatek >= 1_000_000
+                                  select new
+                                  {
+                                      JmenoMilionare = z.Jmeno,
+                                      JmenoBanky = b.Jmeno
+                                  };
+
+            foreach (var polozka in reportMilionaru)
             {
-                Console.WriteLine(zakaznik.Jmeno + " v " + zakaznik.Banka);
+                Console.WriteLine(polozka.JmenoMilionare + " v " + polozka.JmenoBanky);
             }
         }
     }
 }
-
-//
