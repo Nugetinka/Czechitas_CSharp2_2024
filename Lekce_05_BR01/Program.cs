@@ -78,7 +78,7 @@
         };
 
             // 4. Řešení
-            List<string> vzestupne = jmena.OrderBy(x => x).ToList();
+            List<string> vzestupne = jmena.Order().ToList();
 
             foreach (string text in vzestupne)
             {
@@ -130,11 +130,11 @@
             // 7. Řešení
 
             List<SkupinaMilionaru> skupinyPodleBanky = zakaznici
-                .Where(x => x.Zustatek >= 1000000)
-                .GroupBy(x => x.Banka, (kodBanky, milionari) => new SkupinaMilionaru
+                .Where(z => z.Zustatek >= 1_000_000)
+                .GroupBy(z => z.Banka, (kodBanky, milionari) => new SkupinaMilionaru
                 {
                     Banka = kodBanky,
-                    Milionari = milionari.Select(x => x.Jmeno)
+                    Milionari = milionari.Select(m => m.Jmeno)
                 })
                 .ToList();
 
@@ -161,7 +161,7 @@
             var reportMilionaru = from b in banky
                                   join z in zakaznici
                                   on b.Symbol equals z.Banka
-                                  where z.Zustatek >= 1000000
+                                  where z.Zustatek >= 1_000_000
                                   select new
                                   {
                                       JmenoMilionare = z.Jmeno,
