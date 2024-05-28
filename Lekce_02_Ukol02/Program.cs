@@ -10,14 +10,14 @@
 
             try
             {
-                if (pocetHvezdicek < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Počet hvězdiček nesmí být záporný.");
-                }
-
                 if (!jeVstupPlatny)
                 {
                     throw new FormatException("Musí být zadáno celé číslo.");
+                }
+
+                if (pocetHvezdicek < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Počet hvězdiček nesmí být záporný.");
                 }
 
                 for (int i = 0; i < pocetHvezdicek; i++)
