@@ -4,36 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Lucistnik alexander = new Lucistnik(10);
+            Lucistnik alexander = new Lucistnik(5);
 
-            while (alexander.PocetSipu > 0)
+            while (alexander.VratPocetSipu() > 0)
             {
-                alexander.Vystrel();
+                alexander.ZkusVystrelit();
+                Console.WriteLine("Vždy se trefím přímo doprostřed!");
             }
-        }
-
-        public class Lucistnik
-        {
-            public int PocetSipu;
-
-            public void Vystrel()
-            {
-                PocetSipu--;
-
-                if (PocetSipu > 0)
-                {
-                    Console.WriteLine("Vždy se trefím přímo doprostřed!");
-                }
-                else
-                {
-                    Console.WriteLine("Nemám šípy.");
-                }
-            }
-
-            public Lucistnik(int pocetSipu)
-            {
-                PocetSipu = pocetSipu;
-            }
+            Console.WriteLine("Nemám šípy.");
         }
     }
 }
