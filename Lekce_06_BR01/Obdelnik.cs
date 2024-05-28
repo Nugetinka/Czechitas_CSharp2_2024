@@ -1,6 +1,6 @@
 ﻿namespace Lekce_06_BR01
 {
-    internal class Obdelnik
+    public class Obdelnik
     {
         public double Sirka;
         public double Vyska;
@@ -9,12 +9,12 @@
         {
             if (sirka <= 0)
             {
-                throw new ArgumentException("Šířka musí být větší než nula");
+                throw new ArgumentException("Šířka musí být větší než 0.");
             }
 
             if (vyska <= 0)
             {
-                throw new ArgumentException("Výška musí být větší než nula");
+                throw new ArgumentException("Výška musí být větší než 0.");
             }
 
             Sirka = sirka;
@@ -23,7 +23,7 @@
 
         public Obdelnik(double strana) : this(strana, strana)
         { 
-            // ctverec
+            // čtverec
         }
 
         public void VypisParametryObdelniku()
