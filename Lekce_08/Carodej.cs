@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Lekce_08
+{
+    class Carodej : KouzelnaPohadkovaBytost
+    {
+        public override void BudNeviditelny()
+        {
+            Console.WriteLine("Čaroděj je neviditelný.");
+        }
+
+        public override void BudViditelny()
+        {
+            Console.WriteLine("Čaroděj je viditelný.");
+        }
+
+        public override void PredstavSe()
+        {
+            Console.WriteLine("Já jsem čaroděj.");
+        }
+    }
+}
