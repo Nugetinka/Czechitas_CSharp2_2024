@@ -8,11 +8,13 @@
         { 
             get { return Sirka * Vyska; }
         }
-
         public double Obvod
         {
             get { return 2 * (Sirka + Vyska); }
         }
+
+        // jiný zápis
+        //public double Obvod => 2 * (Sirka + Vyska);
 
         public Obdelnik(double sirka, double vyska)
         {
@@ -42,6 +44,16 @@
 
         public void ZvetsiParametryObdelniku(double pridanaSirka, double pridanaVyska)
         {
+            if (pridanaSirka <= 0)
+            {
+                throw new ArgumentException("Přidaná šířka musí být větší než 0.");
+            }
+
+            if (pridanaVyska <= 0)
+            {
+                throw new ArgumentException("Přidaná výška musí být větší než 0.");
+            }
+
             Sirka += pridanaSirka;
             Vyska += pridanaVyska;
         }
