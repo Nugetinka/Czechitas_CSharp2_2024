@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lekce_08
 {
-    class Carodej : KouzelnaPohadkovaBytost
+    class Carodej : PohadkovaBytost, IKouzelnaBytost
     {
-        public override void BudNeviditelny()
+        public void BudNeviditelny()
         {
             Console.WriteLine("Čaroděj je neviditelný.");
         }
 
-        public override void BudViditelny()
+        public void BudViditelny()
         {
             Console.WriteLine("Čaroděj je viditelný.");
         }

@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace Lekce_08
 {
-    class Princezna : TancujiciPohadkovaBytost
+    class Princezna : PohadkovaBytost, ITancujiciBytost
     {
         public override void PredstavSe()
         {
             Console.WriteLine("Já jsem princezna.");
         }
 
-        public override void PrestanTancovat()
+        public void PrestanTancovat()
         {
             Console.WriteLine("Princezna přestala tancovat.");
         }
 
-        public override void ZacniTancovat()
+        public void ZacniTancovat()
         {
             Console.WriteLine("Princezna začala tancovat.");
         }

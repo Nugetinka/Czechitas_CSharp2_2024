@@ -16,8 +16,9 @@
             PohadkovaBytost krasomila = new Princezna();
             PohadkovaBytost miroslav = new Princ();
             PohadkovaBytost cernokneznik = new Carodej();
+            PohadkovaBytost amalka = new Vila();
 
-            List<PohadkovaBytost> bytosti = new List<PohadkovaBytost> { krasomila, miroslav, cernokneznik };
+            List<PohadkovaBytost> bytosti = new List<PohadkovaBytost> { krasomila, miroslav, cernokneznik, amalka };
 
             foreach(var bytost in bytosti)
             {
@@ -34,7 +35,7 @@
             //}
 
             // řešení, které vezme jen TancujícíPohádkovéBytosti
-            foreach (TancujiciPohadkovaBytost tpb in bytosti.OfType<TancujiciPohadkovaBytost>())
+            foreach (ITancujiciBytost tpb in bytosti.OfType<ITancujiciBytost>())
             {
                 tpb.ZacniTancovat();
                 tpb.PrestanTancovat();
@@ -67,6 +68,11 @@
 
             // 3. možnost otestování
             (cernokneznik as Carodej)?.BudViditelny();
+
+            // lze zúžit chování daného objektu jen na daný interface
+            ITancujiciBytost princeznaII = new Princezna();
+            princeznaII.ZacniTancovat();
+            princeznaII.PrestanTancovat();
 
             Console.ReadLine();
         }
